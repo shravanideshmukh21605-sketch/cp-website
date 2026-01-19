@@ -13,7 +13,12 @@
     "@mantine/core": "^8.3.12",
     "@mantine/hooks": "^8.3.12",
     "@mantinex/mantine-logo": "^2.0.0",
+<<<<<<< HEAD
     "@tabler/icons-react": "^3.36.1",
+=======
+    "framer-motion": "^12.26.2",
+    "lucide-react": "^0.562.0",
+>>>>>>> 43f63647f0d7efc7422405e203494d86e3329cb4
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.12.0"
