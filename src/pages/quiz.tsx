@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Home, Search } from 'lucide-react';
 import { Results } from './results';
-import './quiz.css';
 
 export const Quiz = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -19,14 +18,12 @@ export const Quiz = () => {
   const handleNext = () => {
     if (currentStep < totalSteps) {
       const nextStep = currentStep + 1;
-      // Initialize budget when moving to step 3
       if (nextStep === 3 && (!formData.budget || formData.budget === 0)) {
         const min = formData.type === 'rent' ? 5000 : 1000000;
         updateData('budget', min);
       }
       setCurrentStep(nextStep);
     } else {
-      // Finish button clicked - show results
       setShowResults(true);
     }
   };
@@ -51,7 +48,7 @@ export const Quiz = () => {
   };
 
   const homeTypeOptions = ['1 BHK', '2 BHK', '3 BHK', 'Villa', 'Bungalow'];
-  
+
   const puneAreas = [
     'Select an area',
     'Koregaon Park',
@@ -89,12 +86,11 @@ export const Quiz = () => {
     'Model Colony',
     'Camp Area'
   ];
-  
-  // Budget ranges: for rent (monthly) ₹5k-₹1L, for buy ₹10L-₹10Cr
+
   const budgetMin = formData.type === 'rent' ? 5000 : 1000000;
   const budgetMax = formData.type === 'rent' ? 100000 : 100000000;
   const budgetStep = formData.type === 'rent' ? 1000 : 100000;
-  
+
   const formatBudget = (value: number) => {
     if (formData.type === 'rent') {
       if (value >= 100000) {
@@ -102,7 +98,6 @@ export const Quiz = () => {
       }
       return `₹${(value / 1000).toFixed(0)}k/mo`;
     }
-    // For buy
     if (value >= 10000000) {
       return `₹${(value / 10000000).toFixed(1)}Cr`;
     }
@@ -221,7 +216,7 @@ export const Quiz = () => {
           className="btn-next"
           disabled={
             (currentStep === 1 && !formData.type) ||
-            (currentStep === 2 && (!formData.location || formData.location === 'Select an area' || !formData.location.trim())) ||
+            (currentStep === 2 && (!formData.location || !formData.location.trim())) ||
             (currentStep === 3 && (!formData.budget || formData.budget === 0)) ||
             (currentStep === 4 && !formData.homeType)
           }
@@ -241,3 +236,5 @@ export const Quiz = () => {
     </div>
   );
 };
+
+export default Quiz;

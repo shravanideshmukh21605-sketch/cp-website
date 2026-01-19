@@ -142,7 +142,7 @@ export default function Home() {
               size="xl"
               radius="md"
               color="orange"
-              onClick={() => navigate('/quiz')} 
+              onClick={() => navigate('/quiz.tsx')} 
               rightSection={<IconChevronRight size={24} />}
               style={{ 
                 height: '80px', 
