@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+/* REMOVE DEFAULT BROWSER MARGIN */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* PAGE */
+.property-container {
+  min-height: 100vh;
+  padding: 50px 30px;
+  background:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+    url('https://kolkata.nklusive.in/uploads/product/property-main-image-1667888554.jpg');
+  background-size: cover;
+  background-position: center;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  width: 100vw;
+}
+
+/* HERO */
+.hero-title {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 3.4rem;
+}
+
+.hero-subtitle {
+  text-align: center;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+/* FILTERS */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.filter-btn {
+  padding: 12px 30px;
+  border-radius: 30px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.filter-btn.all {
+  background: #455a64;
+}
+
+.filter-btn.buy {
+  background: linear-gradient(135deg, #2e7d32, #66bb6a);
+}
+
+.filter-btn.sell {
+  background: linear-gradient(135deg, #c62828, #ef5350);
+}
+
+.filter-btn.active {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255,255,255,0.4);
+}
+
+/* GRID */
+.property-card-container {
+  max-width: 1400px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 35px;
+}
+
+/* CARD */
+.property-card {
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  color: #222;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  transition: 0.4s;
+}
+
+.property-card:hover {
+  transform: translateY(-12px);
+}
+
+/* IMAGE */
+.image-box {
+  position: relative;
+}
+
+.image-box img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.tag {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #000;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+/* CONTENT */
+.property-card-details {
+  padding: 20px;
+}
+
+.property-card-details h3 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 6px;
+}
+
+.location {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.area {
+  font-size: 0.85rem;
+  margin: 6px 0;
+}
+
+.price {
+  font-size: 1.3rem;
+  color: #c62828;
+  font-weight: 600;
+}
+
+.price span {
+  font-size: 0.9rem;
+  margin-left: 10px;
+  text-decoration: line-through;
+  color: #999;
+}
+
+.discount {
+  color: #2e7d32;
+  font-weight: 500;
+  margin: 10px 0;
+}
+
+/* ACTION BUTTON */
+.action-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 30px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+.action-btn.buy {
+  background: linear-gradient(135deg, #2e7d32, #66bb6a);
+}
+
+.action-btn.buy:hover {
+  background-color: #218838;
+}
+
+
+.action-btn.sell {
+  background: linear-gradient(135deg, #c62828, #ef5350);
+}
+
+.action-btn.sell:hover {
+  background-color: #c82333;
+}
+
+.action-btn:hover {
+  opacity: 0.9;
+}
+
+/* Remove underline from Link */
+.property-card {
+  text-decoration: none; /* Prevent underline from appearing on the card */
+}
